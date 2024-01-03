@@ -1,13 +1,13 @@
 package com.picpaysimplificado.domain.transaction;
 
-import com.picpaysimplificado.domain.user.User;
+import com.picpaysimplificado.domain.user.Users;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Entity(name = "transactions")
+@Entity()
 @Table(name = "transactions")
 @Getter
 @Setter
@@ -23,11 +23,11 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name = "sander_id")
-    private User sender;
+    private Users sender;
 
     @ManyToOne
     @JoinColumn(name = "reciver_id")
-    private  User reciver;
+    private Users reciver;
 
     private LocalDateTime timestamp;
 
